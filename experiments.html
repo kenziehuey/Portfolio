@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiments | Kenzie Huey</title>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Outfit:wght@200;300;400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="experiments-page">
+
+  <!-- NAV BAR -->
+  <nav class="nav nav-solid">
+    <a href="index.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="experiments.html" class="active">Experiments</a>
+    <a href="toolkit.html">Toolkit</a>
+  </nav>
+
+  <!--HEADER -->
+  <header class="exp-header">
+    <h1>Experiments</h1>
+    <p class="exp-scribble">things I don't want to forget</p>
+    <p class="exp-hint">hover (or tap) a polaroid to flip it over</p>
+  </header>
+
+  <!-- flip cards
+       Built from the W3Schools Flip Card. Structure:
+       .flip-card        = the polaroid (tilted)
+       .flip-card-inner  = the part that spins
+       .flip-card-front  = photo side
+       .flip-card-back   = handwritten note side
+       tabindex="0" lets people tap or tab to flip it, not just hover. -->
+  <section class="polaroid-table">
+
+    <div class="flip-card" tabindex="0">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="park.jpg" alt="Sunrise over Haleakalā">
+          <p class="polaroid-caption">sunrise, haleakal&#257;</p>
+        </div>
+        <div class="flip-card-back">
+          <p>Woke up at 3am for this. SOOO worth it!</p>
+          <p class="note-date">Maui, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" tabindex="0">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="waterfall.jpg" alt="A tall waterfall framed by green and yellow leaves">
+          <p class="polaroid-caption">p&#299;p&#299;wai trail</p>
+        </div>
+        <div class="flip-card-back">
+          <p>The prettiest waterfall I have ever seen!.</p>
+          <p class="note-date">Maui, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" tabindex="0">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="hero2.png" alt="Moody ocean waves along a rocky Maui coastline">
+          <p class="polaroid-caption">grey day, good waves</p>
+        </div>
+        <div class="flip-card-back">
+          <p>Overcast skies are underrated. Everything looks softer.</p>
+          <p class="note-date">Maui, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add your own couples photos as couples1.jpg and couples2.jpg -->
+    <div class="flip-card" tabindex="0">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="couple1.jpg" alt="A couple laughing">
+          <p class="polaroid-caption">golden hour</p>
+        </div>
+        <div class="flip-card-back">
+          <p>The best photos happen without asking!</p>
+          <p class="note-date">2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" tabindex="0">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="couples2.jpg" alt="A couple walking hand in hand">
+          <p class="polaroid-caption">the in-between</p>
+        </div>
+        <div class="flip-card-back">
+          <p>I asked them to walk slowly! They looked great! </p>
+          <p class="note-date">2026</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="exp-cta">
+    
+    <div class="buttons buttons-center">
+      <a href="index.html#contact" class="btn btn-filled">Book a Session</a>
+      <a href="work.html" class="btn btn-outline">See Polished Work</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="credits">
+      Polaroid flip cards built from the
+      <a href="https://www.w3schools.com/howto/howto_css_flip_card.asp" target="_blank">W3Schools Flip Card</a>.
+     
+    </p>
+    <p>Kenzie Huey · ARTD 245 Web Design · North Central College, 2026</p>
+    <p class="credits">HTML and CSS written with help from Claude & W3 Schools.</p>
+  </footer>
+
+</body>
+</html>
