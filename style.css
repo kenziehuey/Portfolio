@@ -1,0 +1,732 @@
+
+:root {
+  --cream: #f3e9e3;   /* 60% - main background */
+  --brown: #5a4644;   /* 30% - contact section, buttons, text */
+  --pink:  #c9a3a4;   /* 10% - accent for hovers */
+  --light: #f8f2ee;   /* text on dark backgrounds */
+
+  --heading-font: 'Outfit', sans-serif;
+  --body-font: 'Source Sans 3', sans-serif;
+}
+
+/*
+   BASICS
+   */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: var(--body-font);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: var(--body-font);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Text links + hover state */
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+/* nav */
+.nav {
+  position: absolute;      /* sits on top of the hero photo */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 16px;
+  background: rgba(90, 70, 68, 0.25);   /* soft dark band so links stay readable */
+  border-bottom: 1px solid rgba(248, 242, 238, 0.5);
+}
+
+.nav a {
+  color: var(--light);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 6px 28px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+
+/* Hover: outlined pill */
+.nav a:hover {
+  border-color: var(--light);
+  color: var(--light);
+}
+
+/* Active page: filled brown pill */
+.nav a.active {
+  background: var(--brown);
+}
+
+/*
+   HERO
+    */
+.hero {
+  height: 90vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--light);
+  background-image: url('hero2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 96px);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Subtitle with the little lines on each side */
+.hero-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.hero-subtitle::before,
+.hero-subtitle::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: var(--light);
+}
+
+/* 
+   ABOUT ME
+    */
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 40px 80px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  border-bottom: 1px solid var(--brown);
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+}
+
+.about-text h3 {
+  margin-top: 48px;
+}
+
+.portrait {
+  flex: 1;
+  max-width: 450px;
+  border-radius: 8px;
+}
+
+/*
+   BUTTONS
+    */
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 1px solid var(--brown);
+  transition: 0.2s;
+}
+
+.btn-filled {
+  background: var(--brown);
+  color: var(--light);
+}
+
+.btn-outline {
+  color: var(--brown);
+}
+
+.btn:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--brown);
+}
+
+/* 
+   DESIGN STYLE (collage + text)
+   */
+.design-style {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 120px;
+}
+
+.collage {
+  flex: 1;
+  max-width: 500px;
+}
+
+.design-text {
+  flex: 1;
+}
+
+/* 
+   CONTACT
+   */
+.contact {
+  background: var(--brown);
+  color: var(--light);
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 100px 80px;
+}
+
+.contact-title {
+  font-family: var(--heading-font);
+  font-size: clamp(56px, 8vw, 110px);
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+/* Indents */
+.contact-title span {
+  padding-left: 60px;
+  margin-bottom: 20px;
+}
+
+.contact-right {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Underline-only inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--light);
+  color: var(--light);
+  font-family: var(--body-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  margin-bottom: 24px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--light);
+  opacity: 0.8;
+}
+
+.contact-form textarea {
+  height: 40px;
+  resize: vertical;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.form-arrow {
+  display: block;
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.form-arrow:hover {
+  color: var(--pink);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+/* 
+   FOOTER
+   */
+.footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.credits {
+  opacity: 0.8;
+}
+
+/* 
+   TOOLKIT PAGE
+   */
+
+/* Nav version for pages without a hero photo */
+.nav-solid {
+  position: static;
+  background: var(--brown);
+}
+
+.page-header {
+  text-align: center;
+  padding: 100px 24px 60px;
+}
+
+.page-header h1 {
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-header p {
+  margin: 8px 0 24px;
+}
+
+.jump-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Decorative strip:*/
+.aa-strip {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--brown);
+  border-bottom: 1px solid var(--brown);
+  padding: 8px 0;
+  font-family: var(--heading-font);
+  font-size: 20px;
+}
+
+.aa-strip span {
+  margin: 0 12px;
+}
+
+.aa-strip span:nth-child(even) {
+  color: var(--pink);
+}
+
+.toolkit-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Underlined section titles */
+.toolkit-section h2 {
+  display: inline-block;
+  border-bottom: 1px solid var(--brown);
+  padding-bottom: 12px;
+  padding-right: 120px;
+  margin-bottom: 32px;
+}
+
+.toolkit-section h3 {
+  font-family: var(--heading-font);
+  font-size: 24px;
+}
+
+.toolkit-section h3.spaced {
+  margin-top: 80px;
+}
+
+
+
+.org {
+  width: 100%;
+  border-radius: 8px;
+  margin: 32px 0 16px;
+  background: var(--pink);   /* the background color */
+  padding: 32px;              /* space between the image and the edge */
+}
+
+/* Title graphic + header images */
+.title-img {
+  
+  width: 80%;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: var(--pink);
+  margin: 16px 0 0 !important;
+}
+
+.toolkit-hero-img {
+  width: 100%;
+  max-width: 900px;
+  margin: 48px auto 0;
+  border-radius: 8px;
+}
+
+.quote {
+  margin: 48px 0;
+  text-align: center;
+}
+
+.quote q {
+  font-size: 20px;
+}
+
+.quote figcaption {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.buttons-center {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-right {
+  display: table;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+
+.references {
+  
+  padding: 48px 40px;
+}
+
+.references a:hover {
+  color: var(--light);
+}
+
+
+/* 
+   WORK PAGE
+  */
+.work-header {
+  text-align: center;
+  padding: 60px 24px 32px;
+  border-bottom: 1px solid var(--brown);
+}
+
+.work-header h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.work-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px 40px;
+}
+
+/* Small centered category labels: "PHOTO", "GRAPHIC DESIGN" */
+.work-label {
+  font-family: var(--body-font);
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Two photos side by side */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.work-card {
+  text-align: center;
+}
+
+.work-card h3,
+.work-feature h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 24px;
+}
+
+.work-card p,
+.work-feature p {
+  font-size: 16px;
+}
+
+/* Hover zoom: the wrapper crops, the image scales up inside it */
+
+
+.work-feature {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.work-feature-text {
+  flex: 1;
+  margin-left: 10%;
+}
+
+.work-feature-img {
+  flex: 1.3;
+}
+
+.work-cta {
+  text-align: left;
+  padding: 60px 24px 80px;
+}
+
+/* 
+   EXPERIMENTS PAGE
+    */
+.experiments-page {
+  background: #2b2322;   /* "darkroom" brown-black */
+  color: var(--light);
+}
+
+/* Film grain over the whole page (pointer-events: none so you can still click) */
+.experiments-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.exp-header {
+  text-align: center;
+  padding: 80px 24px 20px;
+}
+
+.exp-header h1 {
+  font-size: clamp(56px, 12vw, 150px);
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Handwritten text that crashes into the heading */
+.exp-scribble {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--pink);
+  transform: rotate(-4deg);
+  margin: -10px 0 16px;
+}
+
+.exp-hint {
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+/* Where the polaroids get "tossed" */
+.polaroid-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* ---- W3Schools Flip Card ---- */
+.flip-card {
+  background-color: transparent;
+  width: 260px;
+  height: 320px;
+  perspective: 1000px;          
+  margin: -10px;               
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+
+/* Each polaroid gets a different tilt */
+.flip-card:nth-child(1) { transform: rotate(-6deg); }
+.flip-card:nth-child(2) { transform: rotate(4deg) translateY(30px); }
+.flip-card:nth-child(3) { transform: rotate(-2deg); }
+.flip-card:nth-child(4) { transform: rotate(7deg) translateY(20px); }
+.flip-card:nth-child(5) { transform: rotate(-5deg) translateY(-10px); }
+
+/* On hover: straighten, lift up, and come to the front */
+.flip-card:hover,
+.flip-card:focus {
+  transform: rotate(0) scale(1.08);
+  z-index: 5;
+  outline: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip */
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;   /* Safari */
+  backface-visibility: hidden;           /* hides the side facing away */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.flip-card-front {
+  background: #fbf8f3;
+  padding: 14px 14px 0;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  filter: sepia(0.25) contrast(0.95);  
+}
+
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  color: var(--brown);
+  text-align: center;
+  margin: 8px 0 0;
+}
+
+/* Back: cream paper with a handwritten note */
+.flip-card-back {
+  background: var(--cream);
+  color: var(--brown);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.flip-card-back p {
+  margin: 0;
+}
+
+.note-date {
+  font-size: 22px;
+  color: var(--pink);
+  margin-top: 16px !important;
+}
+
+.exp-cta {
+  text-align: center;
+  padding: 60px 24px;
+}
+
+/* Buttons need light colors on the dark page */
+.experiments-page .btn-outline {
+  color: var(--light);
+  border-color: var(--light);
+}
+
+.experiments-page .btn-filled {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--brown);
+}
+
+.experiments-page .btn:hover {
+  background: var(--light);
+  border-color: var(--light);
+  color: var(--brown);
+}
+
+.experiments-page .footer a:hover {
+  color: var(--pink);
+}
